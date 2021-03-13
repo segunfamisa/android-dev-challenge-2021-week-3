@@ -16,4 +16,7 @@
     <string name="logo_cont_desc">MySoothe Logo</string>
     <string name="hint_email">Email address</string>
     <string name="hint_pwd">Password</string>
+    <string name="search">Search</string>
+    <string name="search_cont_desc">Search icon</string>
+    <string name="favorite_header">FAVORITE COLLECTIONS</string>
 </resources>
