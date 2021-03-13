@@ -14,4 +14,6 @@
     <string name="sign_up">SIGN UP</string>
     <string name="log_in">LOG IN</string>
     <string name="logo_cont_desc">MySoothe Logo</string>
+    <string name="hint_email">Email address</string>
+    <string name="hint_pwd">Password</string>
 </resources>
