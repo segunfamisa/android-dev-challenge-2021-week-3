@@ -149,7 +149,6 @@ fun InputField(
             Text(
                 text = hint,
                 style = MaterialTheme.typography.body1,
-                color = contentColorFor(backgroundColor = MaterialTheme.colors.surface)
             )
         },
         keyboardOptions = keyboardOptions,
