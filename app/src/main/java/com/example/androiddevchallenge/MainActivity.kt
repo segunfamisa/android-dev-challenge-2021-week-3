@@ -56,11 +56,14 @@ fun MyApp() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = Routes.Welcome) {
         composable(Routes.Welcome) {
-            WelcomeScreen(onSignUpClick = {
-                navController.navigate(Routes.SignUp)
-            }, onLogInClick = {
-                navController.navigate(Routes.LogIn)
-            })
+            WelcomeScreen(
+                onSignUpClick = {
+                    navController.navigate(Routes.SignUp)
+                },
+                onLogInClick = {
+                    navController.navigate(Routes.LogIn)
+                }
+            )
         }
 
         composable(Routes.SignUp) {
