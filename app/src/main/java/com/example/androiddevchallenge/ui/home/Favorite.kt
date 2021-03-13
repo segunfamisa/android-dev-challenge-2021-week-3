@@ -26,11 +26,7 @@ data class Favorite(val name: String, val url: String)
 fun FavoriteCollections(
     favorites: List<Favorite> = emptyList()
 ) {
-    Text(
-        text = stringResource(R.string.favorite_header),
-        style = MaterialTheme.typography.h2,
-        modifier = Modifier.paddingFromBaseline(top = 40.dp)
-    )
+    SectionHeader(text = stringResource(R.string.favorite_header))
     Row(
         modifier = Modifier
             .fillMaxWidth()
