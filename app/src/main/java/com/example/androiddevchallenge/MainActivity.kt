@@ -72,7 +72,6 @@ fun MyApp() {
                 onLogInClick = { _, _ ->
                     navController.navigate(Routes.Home)
                 },
-                onLogInSuccessful = {},
                 onSignUpClick = {
                     navController.navigate(Routes.SignUp)
                 }

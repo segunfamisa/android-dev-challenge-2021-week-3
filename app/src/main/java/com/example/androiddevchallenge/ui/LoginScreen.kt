@@ -28,7 +28,6 @@ import com.example.androiddevchallenge.R
 @Composable
 fun LoginScreen(
     onLogInClick: (String, String) -> Unit,
-    onLogInSuccessful: () -> Unit,
     onSignUpClick: () -> Unit
 ) {
     val loginBg = if (MaterialTheme.colors.isLight) {
