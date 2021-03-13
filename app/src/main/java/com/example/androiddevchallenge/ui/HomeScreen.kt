@@ -23,6 +23,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.material.FabPosition
 import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.Icon
@@ -42,6 +43,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.R
@@ -55,6 +57,7 @@ import dev.chrisbanes.accompanist.insets.ProvideWindowInsets
 
 @Composable
 fun HomeScreen() {
+    val focusManager = LocalFocusManager.current
     var searchText by remember { mutableStateOf("") }
     Scaffold(
         floatingActionButton = {
@@ -94,6 +97,12 @@ fun HomeScreen() {
                             .wrapContentHeight(align = Alignment.CenterVertically),
                         textStyle = MaterialTheme.typography.body1,
                         onValueChange = { searchText = it },
+                        singleLine = true,
+                        keyboardActions = KeyboardActions(
+                            onDone = {
+                                focusManager.clearFocus()
+                            }
+                        ),
                         leadingIcon = {
                             Icon(
                                 Icons.Filled.Search,
