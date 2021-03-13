@@ -19,14 +19,15 @@ fun HomeScreen() {
     var searchText by remember { mutableStateOf("") }
     Scaffold(
         floatingActionButton = {
-            IconButton(
+            FloatingActionButton(
                 onClick = { /*TODO*/ },
-
+                backgroundColor = MaterialTheme.colors.primary
             ) {
                 Icon(imageVector = Icons.Default.PlayArrow, contentDescription = "")
             }
         },
         floatingActionButtonPosition = FabPosition.Center,
+        isFloatingActionButtonDocked = true,
         bottomBar = {
             BottomNav()
         }
@@ -42,9 +43,7 @@ fun HomeScreen() {
                         value = searchText,
                         label = {
                             Text(
-                                text = stringResource(R.string.search),
-                                style = MaterialTheme.typography.body1,
-                                color = contentColorFor(backgroundColor = MaterialTheme.colors.surface)
+                                text = stringResource(R.string.search)
                             )
                         },
                         colors = TextFieldDefaults.textFieldColors(
@@ -59,7 +58,8 @@ fun HomeScreen() {
                         leadingIcon = {
                             Icon(
                                 Icons.Filled.Search,
-                                contentDescription = stringResource(R.string.search_cont_desc)
+                                contentDescription = stringResource(R.string.search_cont_desc),
+                                modifier = Modifier.size(18.dp)
                             )
                         }
                     )
