@@ -3,6 +3,7 @@ package com.example.androiddevchallenge.ui
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -16,52 +17,67 @@ import dev.chrisbanes.accompanist.insets.ProvideWindowInsets
 @Composable
 fun HomeScreen() {
     var searchText by remember { mutableStateOf("") }
-    Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
-        ProvideWindowInsets {
-            Column(
-                modifier = Modifier
-                    .padding(start = 16.dp, top = 56.dp, end = 16.dp)
-                    .fillMaxSize()
-            ) {
-                TextField(
-                    value = searchText,
-                    label = {
-                        Text(
-                            text = stringResource(R.string.search),
-                            style = MaterialTheme.typography.body1,
-                            color = contentColorFor(backgroundColor = MaterialTheme.colors.surface)
-                        )
-                    },
-                    colors = TextFieldDefaults.textFieldColors(
-                        backgroundColor = MaterialTheme.colors.surface
-                    ),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(56.dp)
-                        .wrapContentHeight(align = Alignment.CenterVertically),
-                    textStyle = MaterialTheme.typography.body1,
-                    onValueChange = { searchText = it },
-                    leadingIcon = {
-                        Icon(
-                            Icons.Filled.Search,
-                            contentDescription = stringResource(R.string.search_cont_desc)
-                        )
-                    }
-                )
+    Scaffold(
+        floatingActionButton = {
+            IconButton(
+                onClick = { /*TODO*/ },
 
-                FavoriteCollections(favorites = favorites)
-                Spacer(modifier = Modifier.size(32.dp))
-                AlignRow(
-                    text = stringResource(id = R.string.header_align_body),
-                    items = alignYourBodyItems,
-                    onItemClick = { }
-                )
-                Spacer(modifier = Modifier.size(32.dp))
-                AlignRow(
-                    text = stringResource(id = R.string.header_align_mind),
-                    items = alignYourMindItems,
-                    onItemClick = { }
-                )
+            ) {
+                Icon(imageVector = Icons.Default.PlayArrow, contentDescription = "")
+            }
+        },
+        floatingActionButtonPosition = FabPosition.Center,
+        bottomBar = {
+            BottomNav()
+        }
+    ) {
+        Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
+            ProvideWindowInsets {
+                Column(
+                    modifier = Modifier
+                        .padding(start = 16.dp, top = 56.dp, end = 16.dp)
+                        .fillMaxSize()
+                ) {
+                    TextField(
+                        value = searchText,
+                        label = {
+                            Text(
+                                text = stringResource(R.string.search),
+                                style = MaterialTheme.typography.body1,
+                                color = contentColorFor(backgroundColor = MaterialTheme.colors.surface)
+                            )
+                        },
+                        colors = TextFieldDefaults.textFieldColors(
+                            backgroundColor = MaterialTheme.colors.surface
+                        ),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(56.dp)
+                            .wrapContentHeight(align = Alignment.CenterVertically),
+                        textStyle = MaterialTheme.typography.body1,
+                        onValueChange = { searchText = it },
+                        leadingIcon = {
+                            Icon(
+                                Icons.Filled.Search,
+                                contentDescription = stringResource(R.string.search_cont_desc)
+                            )
+                        }
+                    )
+
+                    FavoriteCollections(favorites = favorites)
+                    Spacer(modifier = Modifier.size(32.dp))
+                    AlignRow(
+                        text = stringResource(id = R.string.header_align_body),
+                        items = alignYourBodyItems,
+                        onItemClick = { }
+                    )
+                    Spacer(modifier = Modifier.size(32.dp))
+                    AlignRow(
+                        text = stringResource(id = R.string.header_align_mind),
+                        items = alignYourMindItems,
+                        onItemClick = { }
+                    )
+                }
             }
         }
     }

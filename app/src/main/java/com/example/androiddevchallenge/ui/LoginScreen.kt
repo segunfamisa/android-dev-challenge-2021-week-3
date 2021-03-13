@@ -10,6 +10,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusDirection
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -41,7 +42,12 @@ fun LoginScreen(
     var password by remember { mutableStateOf("") }
 
     Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
-        Image(painter = loginBg, modifier = Modifier.fillMaxSize(), contentDescription = "")
+        Image(
+            painter = loginBg,
+            contentScale = ContentScale.FillBounds,
+            modifier = Modifier.fillMaxSize(),
+            contentDescription = ""
+        )
 
         Column(
             modifier = Modifier

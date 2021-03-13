@@ -6,6 +6,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -30,7 +31,12 @@ fun WelcomeScreen(
         )
     }
     Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
-        Image(painter = welcomeBg, modifier = Modifier.fillMaxSize(), contentDescription = "")
+        Image(
+            painter = welcomeBg,
+            contentScale = ContentScale.FillBounds,
+            modifier = Modifier.fillMaxSize(),
+            contentDescription = ""
+        )
 
         Column(
             modifier = Modifier
@@ -73,7 +79,6 @@ fun WelcomeScreen(
                 Text(
                     text = stringResource(id = R.string.log_in),
                     style = MaterialTheme.typography.button,
-
                 )
             }
         }
