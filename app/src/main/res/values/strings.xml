@@ -21,4 +21,6 @@
     <string name="favorite_header">FAVORITE COLLECTIONS</string>
     <string name="header_align_body">ALIGN YOUR BODY</string>
     <string name="header_align_mind">ALIGN YOUR MIND</string>
+    <string name="nav_home">HOME</string>
+    <string name="nav_profile">PROFILE</string>
 </resources>
