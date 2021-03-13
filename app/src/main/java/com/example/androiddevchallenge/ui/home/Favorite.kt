@@ -26,7 +26,10 @@ data class Favorite(val name: String, val url: String)
 fun FavoriteCollections(
     favorites: List<Favorite> = emptyList()
 ) {
-    SectionHeader(text = stringResource(R.string.favorite_header))
+    SectionHeader(
+        text = stringResource(R.string.favorite_header),
+        modifier = Modifier.paddingFromBaseline(top = 40.dp)
+    )
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -54,16 +57,6 @@ fun FavoritesColumn(
             }) { favorite ->
             FavoriteCell(favorite = favorite, onFavoriteClick = onFavoriteClick)
         }
-    }
-}
-
-@Composable
-fun <T> List<T>.spacedForEach(spacer: @Composable () -> Unit, action: @Composable (T) -> Unit) {
-    this.forEachIndexed { index, item ->
-        if (index != size - 1) {
-            spacer()
-        }
-        action(item)
     }
 }
 
