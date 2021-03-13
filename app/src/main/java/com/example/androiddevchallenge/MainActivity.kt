@@ -69,12 +69,18 @@ fun MyApp() {
 
         composable(Routes.LogIn) {
             LoginScreen(
-                onLogInClick = { _, _ -> },
+                onLogInClick = { _, _ ->
+                    navController.navigate(Routes.Home)
+                },
                 onLogInSuccessful = {},
                 onSignUpClick = {
                     navController.navigate(Routes.SignUp)
                 }
             )
+        }
+
+        composable(Routes.Home) {
+            HomeScreen()
         }
     }
 }
