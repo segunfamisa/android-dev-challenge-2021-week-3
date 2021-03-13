@@ -27,7 +27,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.androiddevchallenge.ui.LoginScreen
 import com.example.androiddevchallenge.ui.Routes
 import com.example.androiddevchallenge.ui.theme.MyTheme
-import com.example.androiddevchallenge.ui.welcome.WelcomeScreen
+import com.example.androiddevchallenge.ui.WelcomeScreen
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
