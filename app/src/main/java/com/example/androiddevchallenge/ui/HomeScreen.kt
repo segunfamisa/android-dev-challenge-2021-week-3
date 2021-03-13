@@ -10,8 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.R
-import com.example.androiddevchallenge.ui.home.Favorite
-import com.example.androiddevchallenge.ui.home.FavoriteCollections
+import com.example.androiddevchallenge.ui.home.*
 import dev.chrisbanes.accompanist.insets.ProvideWindowInsets
 
 @Composable
@@ -51,6 +50,18 @@ fun HomeScreen() {
                 )
 
                 FavoriteCollections(favorites = favorites)
+                Spacer(modifier = Modifier.size(32.dp))
+                AlignRow(
+                    text = stringResource(id = R.string.header_align_body),
+                    items = alignYourBodyItems,
+                    onItemClick = { }
+                )
+                Spacer(modifier = Modifier.size(32.dp))
+                AlignRow(
+                    text = stringResource(id = R.string.header_align_mind),
+                    items = alignYourMindItems,
+                    onItemClick = { }
+                )
             }
         }
     }

@@ -19,4 +19,6 @@
     <string name="search">Search</string>
     <string name="search_cont_desc">Search icon</string>
     <string name="favorite_header">FAVORITE COLLECTIONS</string>
+    <string name="header_align_body">ALIGN YOUR BODY</string>
+    <string name="header_align_mind">ALIGN YOUR MIND</string>
 </resources>
