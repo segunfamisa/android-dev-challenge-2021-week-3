@@ -23,7 +23,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.FabPosition
 import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.Icon
@@ -79,6 +81,7 @@ fun HomeScreen() {
                 Column(
                     modifier = Modifier
                         .padding(start = 16.dp, top = 56.dp, end = 16.dp)
+                        .verticalScroll(state = rememberScrollState(), enabled = true)
                         .fillMaxSize()
                 ) {
                     TextField(
