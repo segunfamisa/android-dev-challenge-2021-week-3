@@ -16,28 +16,71 @@
 package com.example.androiddevchallenge.ui.theme
 
 import androidx.compose.material.Typography
-import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.example.androiddevchallenge.R
+
+val kulimFamily = FontFamily(
+    fonts = listOf(
+        Font(
+            resId = R.font.kulim_park_light,
+            weight = FontWeight.Light,
+            style = FontStyle.Normal
+        ),
+        Font(
+            resId = R.font.kulim_park_regular,
+            weight = FontWeight.Normal,
+            style = FontStyle.Normal
+        )
+    )
+)
+val latoFamily = FontFamily(
+    fonts = listOf(
+        Font(
+            resId = R.font.lato_bold,
+            weight = FontWeight.Bold,
+            style = FontStyle.Normal
+        ),
+        Font(
+            resId = R.font.lato_regular,
+            weight = FontWeight.Normal,
+            style = FontStyle.Normal
+        )
+    )
+)
 
 // Set of Material typography styles to start with
+private val defaultTypography = Typography()
 val typography = Typography(
-    body1 = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp
-    )
-        /* Other default text styles to override
-    button = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.W500,
-        fontSize = 14.sp
+    h1 = defaultTypography.h1.copy(
+        fontSize = 28.sp,
+        letterSpacing = 1.15.sp,
+        fontFamily = kulimFamily,
+        fontWeight = FontWeight.Light
     ),
-    caption = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 12.sp
-    )
-    */
+    h2 = defaultTypography.h2.copy(
+        fontSize = 14.sp,
+        letterSpacing = 1.15.sp,
+        fontFamily = kulimFamily
+    ), // TODO specify caps
+    h3 = defaultTypography.h3.copy(
+        fontSize = 14.sp,
+        letterSpacing = 0.sp,
+        fontFamily = latoFamily,
+        fontWeight = FontWeight.Bold
+    ),
+    body1 = defaultTypography.body1.copy(fontSize = 14.sp, fontFamily = latoFamily),
+    button = defaultTypography.button.copy(
+        fontSize = 14.sp,
+        fontFamily = latoFamily,
+        fontWeight = FontWeight.Bold
+    ),
+    caption = defaultTypography.caption.copy(
+        fontSize = 12.sp,
+        letterSpacing = 1.15.sp,
+        fontWeight = FontWeight.Normal
+    ) // TODO specify caps
 )
