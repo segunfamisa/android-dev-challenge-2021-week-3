@@ -64,7 +64,8 @@ val typography = Typography(
     h2 = defaultTypography.h2.copy(
         fontSize = 14.sp,
         letterSpacing = 1.15.sp,
-        fontFamily = kulimFamily
+        fontFamily = kulimFamily,
+        fontWeight = FontWeight.Normal
     ), // TODO specify caps
     h3 = defaultTypography.h3.copy(
         fontSize = 14.sp,
